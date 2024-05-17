@@ -1,9 +1,30 @@
-const Shimmer = () =>{
-    return (
-        <div className="shimmer-container">
-            <p>LOADING...</p>
-        </div>
-    );
-}
+const ShimmerCard = () => {
+  return (
+    <div className="shimmer-card">
+      <div className="shimmer-image"></div>
+      <div className="shimmer-text"></div>
+    </div>
+  );
+};
+
+const Shimmer = () => {
+  return (
+    <>
+      <div className="search-container">
+        <input type="text" placeholder="Search..." className="search" />
+        <button className="search-btn">Search</button>
+      </div>
+      <div className="card-list">
+        <ShimmerCard />
+        <ShimmerCard />
+        <ShimmerCard />
+        <ShimmerCard />
+        <ShimmerCard />
+        <ShimmerCard />
+        <ShimmerCard />
+      </div>
+    </>
+  );
+};
 
 export default Shimmer;
