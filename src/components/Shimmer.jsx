@@ -15,13 +15,9 @@ const Shimmer = () => {
         <button className="search-btn">Search</button>
       </div>
       <div className="card-list">
-        <ShimmerCard />
-        <ShimmerCard />
-        <ShimmerCard />
-        <ShimmerCard />
-        <ShimmerCard />
-        <ShimmerCard />
-        <ShimmerCard />
+        {Array(12).fill("").map((e,index)=>{
+            return <ShimmerCard key={index} />
+        })}
       </div>
     </>
   );

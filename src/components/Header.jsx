@@ -1,8 +1,11 @@
+import Logo from "../assets/images/foodVilla.png";
+import { Link } from "react-router-dom";
+
 const Header = () => (
     <div className="header">
       <a href="/">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQoEr-Lm4MM8sMi-w8uwzqJwENl5PighdhfzYcmsbddQ&s"
+          src={Logo}
           alt="logo"
           className="logo"
         />
@@ -10,10 +13,9 @@ const Header = () => (
   
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact</li>
-          <li>Cart</li>
+          <Link to="/"><li>Home</li></Link>
+          <Link to="/about"><li>About Us</li></Link>
+          <Link to="/contact"><li>Contact</li></Link>
         </ul>
       </div>
     </div>
