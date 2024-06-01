@@ -8,15 +8,19 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { Provider } from "react-redux";
+import store from "./utils/Store";
+import Shimmer from "./components/Shimmer";
 
 const About = lazy(()=>import( "./components/About"));
+const Cart = lazy(()=>import("./components/Cart"));
 
 const App = () => (
-  <>
+  <Provider store={store}>
     <Header />
     <Outlet />
     <Footer />
-  </>
+  </Provider>
 );
 
 const appRouter = createBrowserRouter([
@@ -43,6 +47,12 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
       },
+      {
+        path:"/cart",
+        element:<Suspense fallback={<Shimmer/>}>
+          <Cart/>
+        </Suspense>
+      }
     ],
   },
 ]);

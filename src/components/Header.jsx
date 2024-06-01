@@ -1,7 +1,13 @@
+import { useSelector } from "react-redux";
 import Logo from "../assets/images/foodVilla.png";
 import { Link } from "react-router-dom";
 
-const Header = () => (
+
+const Header = () =>{ 
+  const cartItems = useSelector(store => store.cart.items);
+  console.log(cartItems);
+  return(
+  
     <div className="flex justify-between px-4 py-3 bg-blue-900 shadow-lg sticky">
       <a href="/">
         <img
@@ -16,9 +22,10 @@ const Header = () => (
           <Link to="/"><li>Home</li></Link>
           <Link to="/about"><li>About Us</li></Link>
           <Link to="/contact"><li>Contact</li></Link>
+          <Link to="/cart"><li>Cart - {cartItems.length} items</li></Link>
         </ul>
       </div>
     </div>
-  );
+  )};
 
   export default Header;

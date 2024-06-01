@@ -34,6 +34,8 @@ const Body = () => {
 
   const isOnline = useOnline();
 
+  
+
   if (!isOnline) {
     return (
       <div className="message-container">

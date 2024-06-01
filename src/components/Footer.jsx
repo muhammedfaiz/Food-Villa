@@ -1,5 +1,5 @@
 const Footer = () => (
-    <footer className="bg-blue-900 text-white py-4 text-center">
+    <footer className="bg-blue-900 text-white py-4 text-center fixed bottom-0 w-full">
       <div className="container mx-auto">
         <p>&copy; 2024 Food-Villa. All Rights Reserved @muhammed faiz.</p>
         <div className="mt-2">
